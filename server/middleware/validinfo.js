@@ -7,11 +7,13 @@ module.exports = (req, res, next) => {
     }
   
     if (req.path === "/register") {
-      console.log(!email.length);
+      console.log(phone_no.length);
       if (![name, phone_no, email, password].every(Boolean)) {
         return res.status(401).json("Missing Credentials");
       } else if (!validEmail(email)) {
         return res.status(401).json("Invalid Email");
+      } else if (phone_no.length !== 10) {
+        return res.status(401).json("Invalid Phone No");
       }
 
     } else if (req.path === "/login") {

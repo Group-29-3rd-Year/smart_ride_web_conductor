@@ -43,7 +43,18 @@ const Login = ({ setAuth }) => {
                 body: JSON.stringify(body)
             });
 
-            const parseRes = await response.json()
+            const parseRes = await response.json();
+
+            const body1 = { email };
+            const response1 = await fetch("http://localhost:5001/smartride/getId", {
+                method: "POST",
+                headers: {"Content-Type" : "application/json"},
+                body: JSON.stringify(body1)
+            });    
+
+            const parseRes1 = await response1.json();
+            console.log(parseRes1['user_id']);
+            localStorage.setItem('user_id', parseRes1['user_id']);
 
             if(parseRes.token) {
                 //console.log(parseRes);

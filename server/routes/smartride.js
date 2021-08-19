@@ -93,4 +93,48 @@ router.get("/is-verify", authorization, async (req, res) => {
   }
 });
 
+
+router.post("/getId", async(req, res) => {
+    try {
+      
+      const { email } = req.body;
+
+      const user = await pool.query("SELECT user_id FROM users WHERE user_email= $1",
+        [ email ]
+      );
+
+      if (user.rows.length === 0) {
+        return res.status(401).json("Email is incorrect");
+      }
+
+      res.json(user.rows[0]);
+
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server Error.");
+    }
+})
+
+router.put("/update/:conductor_id", async (req, res) => {
+  try {
+    //   1. destructure the req.body
+    const {latitude, longitude } = req.body;
+
+    //   res.json(req.bus.user);
+    let id = req.params.conductor_id;
+
+    const updateBus = await pool.query(
+      "UPDATE bus SET latitude = $1, longitude = $2  WHERE conductor_id = $3",
+      [latitude, longitude, id]
+    );
+
+    if (updateBus) { 
+      res.json("Bus is updated");
+    }
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
 module.exports=router;

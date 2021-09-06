@@ -37,7 +37,7 @@ const Login = ({ setAuth }) => {
             const body = { email, password };
             console.log(email);
             console.log(password);
-            const response = await fetch("http://localhost:5001/smartride/login", {
+            const response = await fetch("http://localhost:5000/conductor/smartride/login", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)
@@ -46,7 +46,7 @@ const Login = ({ setAuth }) => {
             const parseRes = await response.json();
 
             const body1 = { email };
-            const response1 = await fetch("http://localhost:5001/smartride/getId", {
+            const response1 = await fetch("http://localhost:5000/conductor/smartride/getId", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body1)

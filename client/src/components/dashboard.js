@@ -28,7 +28,7 @@ const Dashboard = ({ setAuth }) => {
         console.log(longitude);
         console.log(id);
 
-        const updateDet = await fetch(`http://localhost:5001/smartride/update/${id}`, {
+        const updateDet = await fetch(`http://localhost:5000/conductor/smartride/update/${id}`, {
                 method: "PUT",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)

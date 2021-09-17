@@ -35,6 +35,8 @@ const SideNav = ({ setAuth }) => {
         e.preventDefault()
         localStorage.removeItem("token")   //check logout
         setAuth(false);
+
+        history.push("../smartride/login")
     }
 
     let history = useHistory();
@@ -71,7 +73,7 @@ const SideNav = ({ setAuth }) => {
                         </li>
 
                         <li>
-                            <a className="menu-item" >
+                        <a className="menu-item">
                                 <div className="menu-icon">
                                     <PeopleAltIcon />
                                 </div>
@@ -80,7 +82,7 @@ const SideNav = ({ setAuth }) => {
                         </li>
 
                         <li>
-                            <a className="menu-item" >
+                        <a className="menu-item" onClick={() => {history.push("../stat");}}>
                                 <div className="menu-icon">
                                     <EqualizerIcon />
                                 </div>

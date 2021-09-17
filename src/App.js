@@ -12,6 +12,7 @@ import Login from "./components/login";
 import Register from './components/register';
 import Dashboard from './components/dashboard';
 import { Fragment ,useEffect, useState} from 'react';
+import Stat from './components/pages/stat';
 
 function App() {
 
@@ -80,6 +81,18 @@ function App() {
               render={props => 
                 isAuthenticated ? (
                   <Dashboard {...props} setAuth={setAuth}/>
+                ) : (
+                  <Redirect to="/smartride/login" />
+                )
+              }
+            />
+
+            {/* stat */}
+            <Route 
+              exact path="/stat" 
+              render={props => 
+                isAuthenticated ? (
+                  <Stat {...props} setAuth={setAuth}/>
                 ) : (
                   <Redirect to="/smartride/login" />
                 )

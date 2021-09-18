@@ -43,54 +43,37 @@ toast.configure();
         },
 
         cell: {
-            width: 150,
+            width: 200,
         }
       });
 
 const PassengerList = () => {
 
     var id = localStorage.getItem('user_id');
+    var bus_id = localStorage.getItem('bus_id');
+    console.log(bus_id);
+
     const [passList, setPassList] = useState([]);
-    const [busId, setBusId] = useState([]);
 
-    async function getBusId() {
-        const body = {id};
 
-        const response = await fetch("http://localhost:5000/passenger/passengerlist/getbusid", {
-                method: "POST",
-                headers: {"Content-Type" : "application/json"},
-                body: JSON.stringify(body)
-        })
-
-        const parseRes = await response.json();
-        setBusId(parseRes);
-       
-    }
-
-    
-   // const [conListTwo, setConListTwo] = useState([]);
-
+    const body = {bus_id};
     async function getPassengers() {
-       
-        const body = {busId};
 
-        const response = await fetch("http://localhost:5000/passenger/passengerlist", {
+        const response = await fetch("http://localhost:5000/conductor/passengerlist", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)
         })
 
-        const parseRes = await response.json();
-        setPassList(parseRes);
-
+        const list = await response.json();
+        setPassList(list);
+        console.log(list);
         
     };
 
-   
 
     useEffect(() => {
         getPassengers();
-        getBusId();
     }, []);
 
     const classes = useStyles();
@@ -121,14 +104,6 @@ const PassengerList = () => {
                 
                                     </StyledTableRow>
                                 ))}
-                                {/* {conListTwo.map((row) => (
-                                    <StyledTableRow key={row.user_id}>
-                                        <StyledTableCell className={classes.cell} align="center" component="th" scope="row">{row.user_name}</StyledTableCell>
-                                        <StyledTableCell className={classes.cell} align="center">{row.phone_number}</StyledTableCell>
-                                        <StyledTableCell className={classes.cell} align="center">{row.user_email}</StyledTableCell>
-                                        <StyledTableCell className={classes.cell} align="center">Not Assigned</StyledTableCell>
-                                    </StyledTableRow>
-                                ))} */}
                             </TableBody>
                         </Table>
                     </TableContainer>

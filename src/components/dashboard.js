@@ -9,12 +9,29 @@ const Dashboard = ({ setAuth }) => {
 
     const[ newLat, setNewLat] = useState([]);
     const[ newLng, setNewLng] = useState([]);
+    const[ busId, setBusId] = useState([]);
 
     var id = localStorage.getItem('user_id');
     console.log(id);
 
+    const body = {id};
+    async function getBusId() {
+        
+        const response = await fetch("http://localhost:5000/conductor/passengerlist/getbusid", {
+                method: "POST",
+                headers: {"Content-Type" : "application/json"},
+                body: JSON.stringify(body)
+        })
+
+        const parseRes = await response.json();
+        setBusId(parseRes);
+        console.log(parseRes);
+       
+    }
+    localStorage.setItem('bus_id', busId);
+    console.log(busId);
+
     const location = useGeoLocation();
-    //console.log(JSON.stringify(location));
     var latitude = JSON.stringify(location.coordinates['lat']);
     var longitude = JSON.stringify(location.coordinates['lng']);
     console.log(latitude);
@@ -48,6 +65,7 @@ const Dashboard = ({ setAuth }) => {
     useEffect(() => {
         //setTimeout( updateBusLocation(), 5000);
         updateBusLocation();
+        getBusId();
     },[]);
     
     return(

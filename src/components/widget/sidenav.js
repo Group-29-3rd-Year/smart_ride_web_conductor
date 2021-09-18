@@ -73,11 +73,11 @@ const SideNav = ({ setAuth }) => {
                         </li>
 
                         <li>
-                        <a className="menu-item">
+                            <a className="menu-item" onClick={() => {history.push("../passengerlist");}}>
                                 <div className="menu-icon">
                                     <PeopleAltIcon />
                                 </div>
-                                Passanger List
+                                Passenger List
                             </a>
                         </li>
 

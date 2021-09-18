@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 //import { makeStyles } from '@material-ui/core/styles';
 import './style/login.css';
 import 'react-toastify/dist/ReactToastify.css';
+import useGeoLocation from './widget/getCurLocation';
 
 toast.configure();
 
@@ -16,6 +17,13 @@ toast.configure();
 // }));
 
 const Login = ({ setAuth }) => {
+
+    const location = useGeoLocation();
+    //console.log(JSON.stringify(location));
+    var latitude = JSON.stringify(location.coordinates['lat']);
+    var longitude = JSON.stringify(location.coordinates['lng']);
+    console.log(latitude);
+    console.log(longitude);
     
     //const classes = useStyles();
 

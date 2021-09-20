@@ -82,6 +82,8 @@ const Dashboard = ({ setAuth }) => {
                 </div> */}
                 
             </div>
+            <div className="backgroundImgdash"> 
+            </div>
         </Fragment>
     );
 };

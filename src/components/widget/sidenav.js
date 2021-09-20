@@ -101,9 +101,9 @@ const SideNav = ({ setAuth }) => {
                         variant="contained"
                         color="default"              //// have to check path
                         className={classes.submit}
-                        onClick={ e => logout.bind(e)}
+                        onClick={() => {history.push("../profile");}}
                     >
-                        Log Out
+                        Profile
                     </Button>
                     {/* <button onClick={ e => logout(e)}>Log Out</button> */}
                 </div>

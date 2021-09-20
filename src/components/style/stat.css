@@ -87,9 +87,6 @@
     justify-content: center;
 }
 
-.form-box {
-
-}
 
 .form-bottom {
     margin-left: 10%;
@@ -101,4 +98,21 @@
     justify-content: center;
     margin-left: 20%;
     margin-top: 10%;
+}
+
+.list_conductor_container {
+    /* background-color:#e1e1dd; */
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    margin-left: 27%;
+    margin-right: 250px;
+    margin-top: 380px;
+    padding-top: 10px;
+    padding-left: 110px;
+    padding-right: 150px;
+    padding-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
 }

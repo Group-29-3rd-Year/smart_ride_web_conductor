@@ -71,19 +71,13 @@ const Dashboard = ({ setAuth }) => {
     return(
         <Fragment>
             <div className="body">
+            
+
+            <Header />
+            <SideNav />
+            <div className="backgroundImgDash"></div>
+            </div>
                
-                <Header />
-                <SideNav />
-                
-                {/* <div>
-                {location.loaded
-                    ? JSON.stringify(location)
-                    : "Location data not available yet."}
-                </div> */}
-                
-            </div>
-            <div className="backgroundImgdash"> 
-            </div>
         </Fragment>
     );
 };

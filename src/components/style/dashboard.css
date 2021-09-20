@@ -1,11 +1,11 @@
-.backgroundImg {
+.backgroundImgDash {
     display: inline-block;
-    margin-left: 60px;
+    margin-left: 600px;
     margin-top: 40px;
     height: 540px;
     width: 540px;
     text-align: left;
-    background-image: url('../images/img7.jpg');
+    background-image: url('../images/app_icon.png');
     background-position: left center;
     background-size: contain;
     background-repeat: no-repeat;

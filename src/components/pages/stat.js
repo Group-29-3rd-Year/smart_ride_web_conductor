@@ -24,11 +24,11 @@ const useStyles = makeStyles((theme) => ({
     },
 
     table: {
-        maxWidth: 600,
+        maxWidth: 400,
       },
 
       cell: {
-          width: 150,
+          width: 200,
       }
 }));
 
@@ -217,8 +217,6 @@ const Stat = () => {
                             <TableHead>
                                 <TableRow>
                                     <StyledTableCell className={classes.cell} align="center">Name</StyledTableCell>
-                                    <StyledTableCell className={classes.cell} align="center">Phone No</StyledTableCell>
-                                    <StyledTableCell className={classes.cell} align="center">Email</StyledTableCell>
                                     <StyledTableCell className={classes.cell} align="center">Cost</StyledTableCell>
                                 </TableRow>
                             </TableHead>
@@ -227,8 +225,6 @@ const Stat = () => {
                                 {paidList.map((row) => (
                                     <StyledTableRow key={row.ride_id}>
                                         <StyledTableCell className={classes.cell} align="center" component="th" scope="row">{row.uname}</StyledTableCell>
-                                        <StyledTableCell className={classes.cell} align="center">{row.phone_number}</StyledTableCell>
-                                        <StyledTableCell className={classes.cell} align="center">{row.email}</StyledTableCell>
                                         <StyledTableCell className={classes.cell} align="center">{row.cost}</StyledTableCell>                
                                     </StyledTableRow>
                                 ))}

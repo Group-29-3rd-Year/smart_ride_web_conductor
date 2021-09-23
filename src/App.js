@@ -54,7 +54,7 @@ function App() {
 
             {/* login */}
             <Route 
-              exact path="/smartride/login" 
+              exact path="/" 
               render={props => 
                 !isAuthenticated ? (
                   <Login {...props} setAuth={setAuth}/>
@@ -72,7 +72,7 @@ function App() {
                 !isAuthenticated ? (
                   <Register {...props} setAuth={setAuth}/>
                 ) : (
-                  <Redirect to="/smartride/login" />
+                  <Redirect to="/" />
                 )
               }
             />
@@ -84,7 +84,7 @@ function App() {
                 isAuthenticated ? (
                   <Dashboard {...props} setAuth={setAuth}/>
                 ) : (
-                  <Redirect to="/smartride/login" />
+                  <Redirect to="/" />
                 )
               }
             />
@@ -96,7 +96,7 @@ function App() {
                 isAuthenticated ? (
                   <Stat {...props} setAuth={setAuth}/>
                 ) : (
-                  <Redirect to="/smartride/login" />
+                  <Redirect to="/" />
                 )
               }
             />
@@ -109,7 +109,7 @@ function App() {
                 isAuthenticated ? (
                   <PassengerList {...props} setAuth={setAuth}/>
                 ) : (
-                  <Redirect to="/smartride/login" />
+                  <Redirect to="/" />
                 )
               }
             />
@@ -121,7 +121,7 @@ function App() {
                 isAuthenticated ? (
                   <Profile {...props} setAuth={setAuth}/>
                 ) : (
-                  <Redirect to="/smartride/login" />
+                  <Redirect to="/" />
                 )
               }
             />

@@ -148,7 +148,7 @@ const Register = ({ setAuth }) => {
                         <div className="login">
                             <h4><b>Have Account ?</b></h4>
                             <div className="login-link">
-                                <Link to="/smartride/login" style={{ textDecoration: 'none', color: '#1e90ff' }} >Here</Link>
+                                <Link to="/" style={{ textDecoration: 'none', color: '#1e90ff' }} >Here</Link>
                             </div>
                         </div>
                     </form>

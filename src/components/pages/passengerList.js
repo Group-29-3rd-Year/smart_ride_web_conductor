@@ -39,7 +39,7 @@ toast.configure();
 
       const useStyles = makeStyles({
         table: {
-          maxWidth: 600,
+          maxWidth: 400,
         },
 
         cell: {
@@ -89,18 +89,16 @@ const PassengerList = () => {
                         <Table className={classes.table} aria-label="customized table">
                             <TableHead>
                                 <TableRow>
+                                    <StyledTableCell className={classes.cell} align="center">Passenger ID</StyledTableCell>
                                     <StyledTableCell className={classes.cell} align="center">Name</StyledTableCell>
-                                    <StyledTableCell className={classes.cell} align="center">Phone No</StyledTableCell>
-                                    <StyledTableCell className={classes.cell} align="center">Email</StyledTableCell>
                                 </TableRow>
                             </TableHead>
 
                             <TableBody>
                                 {passList.map((row) => (
                                     <StyledTableRow key={row.pid}>
-                                        <StyledTableCell className={classes.cell} align="center" component="th" scope="row">{row.uname}</StyledTableCell>
-                                        <StyledTableCell className={classes.cell} align="center">{row.phone_number}</StyledTableCell>
-                                        <StyledTableCell className={classes.cell} align="center">{row.email}</StyledTableCell>
+                                        <StyledTableCell className={classes.cell} align="center" component="th" scope="row">{row.pid}</StyledTableCell>
+                                        <StyledTableCell className={classes.cell} align="center">{row.uname}</StyledTableCell>
                 
                                     </StyledTableRow>
                                 ))}

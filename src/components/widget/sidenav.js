@@ -149,7 +149,7 @@ const SideNav = () => {
                             localStorage.removeItem("token");
                             setAuth(false);
                             window.location.reload();
-                            history.push("../smartride/login");
+                            history.push("/");
                         }}
                     >
                         Logout

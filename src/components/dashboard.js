@@ -17,7 +17,7 @@ const Dashboard = ({ setAuth }) => {
     const body = {id};
     async function getBusId() {
         
-        const response = await fetch("http://localhost:5000/conductor/passengerlist/getbusid", {
+        const response = await fetch("https://smartride-backend.herokuapp.com/conductor/passengerlist/getbusid", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)
@@ -45,7 +45,7 @@ const Dashboard = ({ setAuth }) => {
         console.log(longitude);
         console.log(id);
 
-        const updateDet = await fetch(`http://localhost:5000/conductor/smartride/update/${id}`, {
+        const updateDet = await fetch(`https://smartride-backend.herokuapp.com/conductor/smartride/update/${id}`, {
                 method: "PUT",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)

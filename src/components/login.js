@@ -45,7 +45,7 @@ const Login = ({ setAuth }) => {
             const body = { email, password };
             console.log(email);
             console.log(password);
-            const response = await fetch("http://localhost:5000/conductor/smartride/login", {
+            const response = await fetch("https://smartride-backend.herokuapp.com/conductor/smartride/login", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)
@@ -54,7 +54,7 @@ const Login = ({ setAuth }) => {
             const parseRes = await response.json();
 
             const body1 = { email };
-            const response1 = await fetch("http://localhost:5000/conductor/smartride/getId", {
+            const response1 = await fetch("https://smartride-backend.herokuapp.com/conductor/smartride/getId", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body1)

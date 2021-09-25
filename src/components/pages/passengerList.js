@@ -59,7 +59,7 @@ const PassengerList = () => {
     const body = {bus_id};
     async function getPassengers() {
 
-        const response = await fetch("http://localhost:5000/conductor/passengerlist", {
+        const response = await fetch("https://smartride-backend.herokuapp.com/conductor/passengerlist", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)

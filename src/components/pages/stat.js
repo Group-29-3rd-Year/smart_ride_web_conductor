@@ -66,7 +66,7 @@ const Stat = () => {
     const [paidList, setPaidList] = useState([]);
  
     async function getTodayPassengerCount() {
-        const res = await fetch("https://smartride-backend.herokuapp.com/conductor/stat");
+        const res = await fetch("http://localhost:5000/conductor/stat");
 
         const listCount = await res.json();
 
@@ -75,7 +75,7 @@ const Stat = () => {
     }
 
     async function getTodayIncome() {
-        const res = await fetch("https://smartride-backend.herokuapp.com/conductor/stat/todayincome");
+        const res = await fetch("http://localhost:5000/conductor/stat/todayincome");
 
         const tincome = await res.json();
 
@@ -84,7 +84,7 @@ const Stat = () => {
     }
 
     async function getPrevIncome() {
-        const res = await fetch("https://smartride-backend.herokuapp.com/conductor/stat/previousincome");
+        const res = await fetch("http://localhost:5000/conductor/stat/previousincome");
 
         const previncome = await res.json();
 
@@ -127,7 +127,7 @@ const Stat = () => {
 
     const body = {id};
     async function getConductName() {
-        const res = await fetch("https://smartride-backend.herokuapp.com/conductor/stat/conname", {
+        const res = await fetch("http://localhost:5000/conductor/stat/conname", {
             method: "POST",
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(body)
@@ -140,7 +140,7 @@ const Stat = () => {
     }
 
     async function getBusName() {
-        const res = await fetch("https://smartride-backend.herokuapp.com/conductor/stat/busname", {
+        const res = await fetch("http://localhost:5000/conductor/stat/busname", {
             method: "POST",
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(body)
@@ -154,7 +154,7 @@ const Stat = () => {
 
     const body1 = {bus_id};
     async function getConductName() {
-        const res = await fetch("https://smartride-backend.herokuapp.com/conductor/stat/paidlist", {
+        const res = await fetch("http://localhost:5000/conductor/stat/paidlist", {
             method: "POST",
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(body1)

@@ -39,7 +39,7 @@ const SideNav = () => {
   async function isAuth(){
     try {
       
-      const response  = await fetch("https://smartride-backend.herokuapp.com/conductor/smartride/is-verify", {
+      const response  = await fetch("http://localhost:5000/conductor/smartride/is-verify", {
         method: "GET",
         headers: { token : localStorage.token }
       });

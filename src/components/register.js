@@ -42,7 +42,7 @@ const Register = ({ setAuth }) => {
             const body = {name, phone_no, email, password};
             console.log(name);
             
-            const response = await fetch("https://smartride-backend.herokuapp.com/conductor/smartride/register", {
+            const response = await fetch("http://localhost:5000/conductor/smartride/register", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)

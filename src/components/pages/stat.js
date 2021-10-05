@@ -161,7 +161,7 @@ const Stat = () => {
         });
 
         const list = await res.json();
-
+        console.log(list);
         setPaidList(list);
     }
 
